@@ -26,6 +26,9 @@ import timsmcplugin.GiveMe.GimmeExceptions.ForbiddenPlayerRequestItem;
             Give new players a basic starter package
  */
 public class TimsCustomCommands implements CommandExecutor {
+    public void heal(CommandSender sender, String[] args) {
+
+    }
     public void giveMeItem(CommandSender sender, String[] args) {
         Player player = (Player) sender;
         if (sender != null ) {
