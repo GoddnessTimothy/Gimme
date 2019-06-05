@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Gimme:jar">
+    <output-path>$USER_HOME$/Desktop/TimsMCPugin/plugins</output-path>
+    <root id="archive" name="Gimme.jar">
+      <element id="module-output" name="Gimme" />
+    </root>
+  </artifact>
+</component>

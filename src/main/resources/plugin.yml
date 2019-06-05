@@ -1,0 +1,10 @@
+name: Main
+version: ${project.version}
+main: timsmcplugin.GiveMe.Main.Main
+api-version: 1.13
+description: Main an item
+
+commands:
+  GiveMe:
+    description: gives requested item to player
+    usage: /giveme <item-name> [amount]
