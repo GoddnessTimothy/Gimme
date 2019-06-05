@@ -1,7 +1,7 @@
 # GiveMe
-Simple minecraft plugin that grants user item they requested
+Simple minecraft plugin that grants user item they requested </br>
 
-This plugin uses Spigot 1.14.2 and Minecraft Server 1.14.2
+This plugin uses Spigot 1.14.2 and Minecraft Server 1.14.2 <br/>
 Usage: /giveme <item-name> [amount]; amount is optional
  <br />
 <b> player can Request for Item they want </b>
