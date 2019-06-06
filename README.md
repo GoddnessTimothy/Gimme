@@ -1,7 +1,7 @@
 # GiveMe
 Simple minecraft plugin that grants user item they requested </br>
 
-tUsage: /giveme <item-name> [amount]; amount is optional<br/><br />
+Usage: /giveme <item-name> [amount]; amount is optional<br/><br />
 <b> player can Request for Item they want </b>
 <br />
 <a href="https://ibb.co/VQF8KNx"><img src="https://i.ibb.co/RBXW5SN/giveMe.png" alt="giveMe" border="0" /></a>
