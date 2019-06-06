@@ -10,8 +10,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import timsmcplugin.GiveMe.GimmeExceptions.ForbiddenPlayerRequestItem;
 
-import javax.print.attribute.standard.NumberUp;
-
 //ONLY the Main class needs to extends JavaPlugin! and ONLY ONE class can extend JavaPlugin.
 //https://bukkit.org/threads/pluginalreadyinitialized-exception.214917/
 public class TimsCustomCommands implements CommandExecutor {
