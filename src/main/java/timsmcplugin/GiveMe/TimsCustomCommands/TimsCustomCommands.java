@@ -1,5 +1,6 @@
 package timsmcplugin.GiveMe.TimsCustomCommands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -11,28 +12,57 @@ import timsmcplugin.GiveMe.GimmeExceptions.ForbiddenPlayerRequestItem;
 
 //ONLY the Main class needs to extends JavaPlugin! and ONLY ONE class can extend JavaPlugin.
 //https://bukkit.org/threads/pluginalreadyinitialized-exception.214917/
+public class TimsCustomCommands implements CommandExecutor {
+    /*
+        Heals player back to full health.
+     */
+    public void heal(CommandSender sender, String[] args) {
+        //Implement this
+        double healthTillFull = 0.0;
+        Player player = (Player) sender;
+        try {
+            if (args.length == 1) {
+                player = Bukkit.getServer().getPlayer(args[0]);
+                //If player does not exist....
+                if(player == null) {
+                    player = (Player) sender;
+                    throw new NullPointerException();
+                }
+                //If player can be healed...
+                if (player.getHealth() < 20.0 ) {
+                    healthTillFull = 20.0 - player.getHealth();
+                    player.setHealth(player.getHealth() + healthTillFull);
+                    player.sendMessage(ChatColor.GREEN + "You have been restored back to full HP.");
+                } else {
+                    player.sendMessage(ChatColor.RED + player.getName() + " is already at full HP.");
+                }
+            } else {
+                //If player enters too many arguements...
+                throw new ArrayIndexOutOfBoundsException();
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            player.sendMessage(ChatColor.RED + "usage: /heal <player-name>");
+        } catch (NullPointerException e) {
+            player.sendMessage(ChatColor.RED + "That player does not exist.");
+        }
+    }
 
-/*
-    Simple plugin that grants user item they request.
-    Use: /giveme <item-name> [amount]; where amount is optional
-    Limits each request to 5 (allow flexibility for more common/lower value items like dirt)
-    Handles all edge cases
-        To Do:
+    /*
+        Simple plugin that grants user item they request.
+        Use: /giveme <item-name> [amount]; where amount is optional
+        Limits each request to 5 (allow flexibility for more common/lower value items like dirt)
+        Handles all edge cases
+            To Do:
             Create a class system
                 Increase lvl of grants per level
             Ban Rare items
             Ban destructive items
             Grant frequent players rewards for relogging in
             Give new players a basic starter package
- */
-public class TimsCustomCommands implements CommandExecutor {
-    public void heal(CommandSender sender, String[] args) {
-        //Implement this
-
-    }
+    */
     public void giveMeItem(CommandSender sender, String[] args) {
         Player player = (Player) sender;
-        if (sender != null ) {
+        if (player != null ) {
             try {
                 //Save the item user requested for
                 Material mat = Material.valueOf(args[0].toUpperCase());
@@ -74,7 +104,10 @@ public class TimsCustomCommands implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        giveMeItem(sender, args);
-        return true;
+       if(command.getName().equalsIgnoreCase("giveme"))
+           giveMeItem(sender, args);
+       else if(command.getName().equalsIgnoreCase("heal"))
+           heal(sender,args);
+       return true;
     }
 }

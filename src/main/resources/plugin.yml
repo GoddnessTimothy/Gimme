@@ -8,3 +8,6 @@ commands:
   GiveMe:
     description: gives requested item to player
     usage: /giveme <item-name> [amount]
+  Heal:
+    description: heal player back to full health
+    usage: /heal <player-name>
