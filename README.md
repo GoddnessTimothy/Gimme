@@ -13,3 +13,6 @@ tUsage: /giveme <item-name> [amount]; amount is optional<br/><br />
 <b> Player can specify the quantity </b>
 <br />
 <a href="https://ibb.co/PrSqV3g"><img src="https://i.ibb.co/dfh8H1D/giveme-quantity.png" alt="giveme-quantity" border="0" /></a>
+
+# Heal
+Heal player back to full health</br>
