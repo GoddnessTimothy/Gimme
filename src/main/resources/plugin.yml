@@ -1,13 +1,13 @@
-name: Main
+name: TimsCustomCommands
 version: ${project.version}
 main: timsmcplugin.GiveMe.Main.Main
 api-version: 1.13
-description: Main an item
+description: Set of useful custom commmands
 
 commands:
-  GiveMe:
+  Give:
     description: gives requested item to player
-    usage: /giveme <item-name> [amount]
+    usage: /giveme <player-name> <item-name> [amount]
   Heal:
     description: heal player back to full health
     usage: /heal <player-name>
