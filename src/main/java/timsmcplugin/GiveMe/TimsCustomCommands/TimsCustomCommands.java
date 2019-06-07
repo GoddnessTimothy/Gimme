@@ -114,6 +114,7 @@ public class TimsCustomCommands implements CommandExecutor {
         }
     }
 
+    //This is where you define your commands.
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
        if(command.getName().equalsIgnoreCase("give"))

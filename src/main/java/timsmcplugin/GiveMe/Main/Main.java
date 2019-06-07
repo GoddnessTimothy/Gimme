@@ -11,6 +11,7 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getLogger().info("Plugin Enabled!");
+        //Enable plugins here
         this.getCommand("give").setExecutor(new TimsCustomCommands());
         this.getCommand("heal").setExecutor(new TimsCustomCommands());
     }
